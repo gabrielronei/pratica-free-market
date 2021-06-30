@@ -1,0 +1,466 @@
+{
+	"info": {
+		"_postman_id": "f9a578f7-beb1-469e-8619-5a19bf3b5630",
+		"name": "pratica-free-market",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CadastraUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"gabriheron@hotmail.com\",\n    \"senha\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario"
+					]
+				},
+				"description": "Deve retornar 200 caso usuario for cadastrado"
+			},
+			"response": []
+		},
+		{
+			"name": "CadastraCategoria",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQcsOhdGljYSBGcmVlIE1hcmtldCIsInN1YiI6IjEiLCJpYXQiOjE2MjQ5OTk1ODcsImV4cCI6MTYyNTYwNDM4N30.3YEnNJixrnTy9I-9of9vy2t2aE9Z7-VSFXu659XQ9bc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Tecnologia\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categoria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categoria"
+					]
+				},
+				"description": "Deve retornar 200 caso usuario for cadastrado"
+			},
+			"response": []
+		},
+		{
+			"name": "CadastraCategoriaFilha",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Ios\",\n    \"idCategoriaMae\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categoria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categoria"
+					]
+				},
+				"description": "Deve retornar 200 caso usuario for cadastrado"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"gabriheron@hotmail.com\",\n    \"senha\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CadastraProduto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQcsOhdGljYSBGcmVlIE1hcmtldCIsInN1YiI6IjEiLCJpYXQiOjE2MjUwMDQ0NjEsImV4cCI6MTYyNTYwOTI2MX0.l4yPCce9c7KmWiuRP5O-pMq8ebNd1mmcXwZ9StAzc9A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Macbook air 2013\",\n    \"preco\": 15000,\n    \"quantidadeDisponivel\": 1,\n    \"descricao\": \"# Computador novo em folha, muito novinho\",\n    \"fotos\": [\n        \"iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==\"\n    ],\n    \"caracteristicas\": [{\n        \"titulo\": \"Características gerais\",\n        \"descricoesCaracteristicas\": [\n            {\n                \"titulo\": \"Marca\",\n                \"descricao\": \"Britânia\"\n            },\n            {\n                \"titulo\": \"Modelo\",\n                \"descricao\": \"063802056\"\n            }\n        ]\n    }],\n    \"categoriaId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CadastraProdutoImagem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQcsOhdGljYSBGcmVlIE1hcmtldCIsInN1YiI6IjEiLCJpYXQiOjE2MjQ1NTc5OTIsImV4cCI6MTYyNTE2Mjc5Mn0.K58W6d_WHzILZ2wVKlIGIER4CV5Gwe-vzx2OOgNPb7E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fotos\": [\n        \"iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produto/1/adicionar-imagem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto",
+						"1",
+						"adicionar-imagem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CadastraAvaliacao",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQcsOhdGljYSBGcmVlIE1hcmtldCIsInN1YiI6IjEiLCJpYXQiOjE2MjQ2MzAzNjQsImV4cCI6MTYyNTIzNTE2NH0.isH2szxv7WTwO2blQ7Rwr97Wp2Lfi7Q4aaxo_GLJjxo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nota\": 3,\n    \"titulo\": \"Produto bom demais!\",\n    \"descricao\": \"Produto excelente, chegou muito rapido em perfeito estado!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produto/1/avaliacao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto",
+						"1",
+						"avaliacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CadastraPergunta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQcsOhdGljYSBGcmVlIE1hcmtldCIsInN1YiI6IjEiLCJpYXQiOjE2MjQ2MzAzNjQsImV4cCI6MTYyNTIzNTE2NH0.isH2szxv7WTwO2blQ7Rwr97Wp2Lfi7Q4aaxo_GLJjxo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Esse produto é novo?\",\n    \"descricao\": \"Pelas fotos o estado não parece muito legal, gostaria de saber...\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produto/1/pergunta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto",
+						"1",
+						"pergunta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DetalhesProduto",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/produto/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NovaCompra",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQcsOhdGljYSBGcmVlIE1hcmtldCIsInN1YiI6IjEiLCJpYXQiOjE2MjQ5OTk1ODcsImV4cCI6MTYyNTYwNDM4N30.3YEnNJixrnTy9I-9of9vy2t2aE9Z7-VSFXu659XQ9bc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"quantidade\": 1,\n    \"produtoId\": 1,\n    \"gatewayPagamento\": \"PAYPAL\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/compra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compra"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DetalhesCompra",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQcsOhdGljYSBGcmVlIE1hcmtldCIsInN1YiI6IjEiLCJpYXQiOjE2MjQ5OTk1ODcsImV4cCI6MTYyNTYwNDM4N30.3YEnNJixrnTy9I-9of9vy2t2aE9Z7-VSFXu659XQ9bc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"quantidade\": 1,\n    \"produtoId\": 1,\n    \"gatewayPagamento\": \"PAYPAL\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/compra/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compra",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NovoPagamentoPaypal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJQcsOhdGljYSBGcmVlIE1hcmtldCIsInN1YiI6IjEiLCJpYXQiOjE2MjQ5OTk1ODcsImV4cCI6MTYyNTYwNDM4N30.3YEnNJixrnTy9I-9of9vy2t2aE9Z7-VSFXu659XQ9bc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"paypalId\": \"113721238907123\",\n    \"pagamentoStatusCode\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pagamento-paypal/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pagamento-paypal",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teste",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"compraId\": 1,\n    \"fornecedorId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cadastrar-ranking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cadastrar-ranking"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
